@@ -1,0 +1,7 @@
+2024/03/28-21:41:49.922 f728 Reusing MANIFEST /home/optedoblivion/.config/chromium/Default/WebStorage/17/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2024/03/28-21:41:49.922 f728 Recovering log #3
+2024/03/28-21:41:49.922 f728 Reusing old log /home/optedoblivion/.config/chromium/Default/WebStorage/17/IndexedDB/indexeddb.leveldb/000003.log 
+2024/03/28-21:43:03.579 f729 Level-0 table #5: started
+2024/03/28-21:43:03.582 f729 Level-0 table #5: 480 bytes OK
+2024/03/28-21:43:03.584 f729 Delete type=0 #3
+2024/03/28-21:43:03.584 f729 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

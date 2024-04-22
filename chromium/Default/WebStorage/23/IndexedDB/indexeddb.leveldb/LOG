@@ -1,0 +1,6 @@
+2024/03/29-00:11:32.549 7d74 Creating DB /home/optedoblivion/.config/chromium/Default/WebStorage/23/IndexedDB/indexeddb.leveldb since it was missing.
+2024/03/29-00:11:32.555 7d74 Reusing MANIFEST /home/optedoblivion/.config/chromium/Default/WebStorage/23/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2024/03/29-00:11:35.052 7d75 Level-0 table #5: started
+2024/03/29-00:11:35.055 7d75 Level-0 table #5: 912 bytes OK
+2024/03/29-00:11:35.058 7d75 Delete type=0 #3
+2024/03/29-00:11:35.059 7d75 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

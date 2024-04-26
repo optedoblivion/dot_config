@@ -1,6 +1,0 @@
-2024/03/28-16:02:29.522 f729 Reusing MANIFEST /home/optedoblivion/.config/chromium/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/03/28-16:02:29.522 f729 Recovering log #4
-2024/03/28-16:02:29.527 f729 Reusing old log /home/optedoblivion/.config/chromium/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000004.log 
-2024/03/28-16:02:44.092 f729 Level-0 table #8: started
-2024/03/28-16:02:44.108 f729 Level-0 table #8: 2734766 bytes OK
-2024/03/28-16:02:44.110 f729 Delete type=0 #4

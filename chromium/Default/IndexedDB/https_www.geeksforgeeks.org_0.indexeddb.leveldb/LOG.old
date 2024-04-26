@@ -1,6 +1,0 @@
-2024/03/28-20:51:47.732 f728 Creating DB /home/optedoblivion/.config/chromium/Default/IndexedDB/https_www.geeksforgeeks.org_0.indexeddb.leveldb since it was missing.
-2024/03/28-20:51:47.734 f728 Reusing MANIFEST /home/optedoblivion/.config/chromium/Default/IndexedDB/https_www.geeksforgeeks.org_0.indexeddb.leveldb/MANIFEST-000001
-2024/03/28-20:52:01.361 f729 Level-0 table #5: started
-2024/03/28-20:52:01.367 f729 Level-0 table #5: 357 bytes OK
-2024/03/28-20:52:01.369 f729 Delete type=0 #3
-2024/03/28-20:52:01.370 f729 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

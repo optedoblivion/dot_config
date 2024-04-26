@@ -1,9 +1,0 @@
-2024/03/31-22:24:46.150 9dec Reusing MANIFEST /home/optedoblivion/.config/chromium/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/03/31-22:24:46.150 9dec Recovering log #7
-2024/03/31-22:24:46.152 9dec Reusing old log /home/optedoblivion/.config/chromium/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000007.log 
-2024/03/31-22:24:46.942 9dec Compacting 1@1 + 1@2 files
-2024/03/31-22:24:46.951 9dec Generated table #10@1: 198 keys, 535409 bytes
-2024/03/31-22:24:46.952 9dec Compacted 1@1 + 1@2 files => 535409 bytes
-2024/03/31-22:24:46.953 9dec compacted to: files[ 0 0 1 0 0 0 0 ]
-2024/03/31-22:24:46.953 9dec Delete type=2 #5
-2024/03/31-22:24:46.953 9dec Delete type=2 #8

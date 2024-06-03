@@ -14,7 +14,6 @@ function run() {
     if [ $PERCENT -gt 90 ]; then
         COLOR="$COLOR_ERROR"
     fi
-    PERCENT="$PERCENT%"
     #echo "$COLOR$ICO $PERCENT"
-    echo "${ICO}${PERCENT}"
+    echo "${ICO}${PERCENT}%"
 }

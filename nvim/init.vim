@@ -16,6 +16,8 @@ call plug#begin()
   Plug 'kdheepak/lazygit.nvim'
   Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
   Plug 'vim-airline/vim-airline'
+  Plug 'DreamMaoMao/yazi.nvim'
+  Plug 'vim-scripts/TaskList.vim'
 call plug#end()
 " Plugins END
 "------------------------------------------------
@@ -130,6 +132,11 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -138,11 +145,6 @@ inoremap <silent><expr> <TAB>
 \ <SID>check_back_space() ? "\<TAB>" :
 \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -281,7 +283,7 @@ set history=50                      " Keep 50 lines of comand line history.
 
 "" Mouse
 set mouse=a                         " Enable mouse
-behave xterm
+"" behave xterm
 set selectmode=mouse
 
 "" Searching
@@ -312,6 +314,11 @@ set si
 
 "" Scrollbars
 set sidescrolloff=2
+
+"" File manager
+if !exists('g:yazi_map_keys') || g:yazi_map_keys
+    map <leader>y :Yazi<CR>
+endif
 
 "" Misc.
 set sw=4

@@ -1,14 +1,15 @@
 {
   "dependencies": {
-    "coc-json": ">=1.9.2",
-    "coc-python": ">=1.2.13",
-    "coc-java": ">=1.15.2",
-    "coc-kotlin": ">=0.1.0",
-    "coc-protobuf": ">=0.0.2",
-    "coc-yaml": ">=1.9.0",
-    "coc-toml": ">=1.2.5",
-    "coc-sh": ">=1.2.2",
     "coc-go": ">=1.3.33",
-    "coc-tsserver": ">=2.2.0"
+    "coc-java": ">=1.15.2",
+    "coc-json": ">=1.9.2",
+    "coc-kotlin": ">=0.1.0",
+    "coc-prettier": "^9.3.2",
+    "coc-protobuf": ">=0.0.2",
+    "coc-python": ">=1.2.13",
+    "coc-sh": ">=1.2.2",
+    "coc-toml": ">=1.2.5",
+    "coc-tsserver": ">=2.2.0",
+    "coc-yaml": ">=1.9.0"
   }
 }

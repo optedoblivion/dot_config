@@ -55,7 +55,8 @@ client.placeholder      $bg-inactive  $bg-inactive  $text-light $bg-inactive  $b
 exec xsettingsd
 
 # polkit
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/lib/polkit-1/polkit-agent-helper-1
 
 # geoclue
 exec /usr/lib/geoclue2-1-pantheon/pantheon-agent-geoclue2
@@ -85,9 +86,9 @@ exec "sleep 3 && easyeffects --gapplication-service"
 # Example configuration:
 #
 exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
+          timeout 300 'swaylock -f' \
           timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f -c 000000'
+          before-sleep 'swaylock -f'
 
 for_window [app_id="Firefox"] inhibit_idle fullscreen
 
@@ -114,13 +115,13 @@ input "1739:52619:SYNA8004:00_06CB:CD8B_Touchpad" {
 # Custom:
 #
 
-bindsym $mod+Ctrl+l exec "swaylock -f -c 000000"
+bindsym $mod+Ctrl+l exec "swaylock -f"
 
 # Audio
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 3 +3%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 3 -3%
-bindsym XF86AudioMute exec pactl set-sink-mute 3 toggle
-bindsym XF86AudioMicMute exec pactl set-source-mute 3 toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +3%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -3%
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute 0 toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
@@ -128,37 +129,6 @@ bindsym XF86AudioPrev exec playerctl previous
 ## Display
 bindsym XF86MonBrightnessUp exec brightnessctl set 3%+
 bindsym XF86MonBrightnessDown exec brightnessctl set 3%-
-
-### Monitor Layouts
-#set $docking_station 1 Laptop, 2 Docked
-#
-#mode "$docking_station" {
-#    bindsym 1 exec 'swaymsg output eDP-1 position 0 0', mode "default"
-#    bindsym 2 exec "swaymsg 'output eDP-1 position 0 0 mode 1920 1080'; swaymsg 'output DP-6 transform normal';swaymsg 'output DP-5 toggle'; swaymsg 'output DP-5 position 1920 0 mode 3440 1440'", mode "default"
-#
-#    bindsym Return mode "default"
-#    bindsym Escape mode "default"
-#}
-#
-#bindsym $mod+Shift+Ctrl+d mode "$docking_station"
-# Laptop screen
-#bindsym $mod+Shift+Return+1 exec swaymsg output eDP-1 toggle
-
-# Laptop only
-bindsym $mod+Shift+Ctrl+1 exec swaymsg output eDP-1 position 0 0
-
-# Docking station left side
-#bindsym $mod+Shift+Ctrl+2 exec "swaymsg 'output eDP-1 position 0 0 mode 1920 1080'; swaymsg 'output DP-5 transform normal';swaymsg 'output DP-5 toggle'; swaymsg 'output DP-5 position 1920 0 mode 3440 1440'"
-bindsym $mod+Shift+Ctrl+2 exec "swaymsg 'output eDP-1 position 0 0 mode 1920 1080'; swaymsg 'output DP-6 position 1920 0 mode 3440 1440'"
-bindsym $mod+Shift+Ctrl+3 exec "swaymsg 'output eDP-1 position 2500 0 mode 1920 1080'; swaymsg 'output DP-4 transform normal'; swaymsg 'output DP-4 position 0 0 mode 2560 1440 transform 90 anticlockwise'"
-
-# Docking station right side
-#bindsym $mod+Shift+Ctrl+2 exec "swaymsg 'output DP-4 position 0 0 mode 3440 1440'; swaymsg 'output eDP-1 position 2800 1440'"
-
-## Big monitor
-#bindsym $mod+Shift+Ctrl+3 exec swaymsg output DP-4 toggle
-## Other monitor
-#bindsym $mod+Shift+Ctrl+4 exec swaymsg output DP-5 toggle
 
 #
 # Screen capture
@@ -334,7 +304,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    #status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    #status_command while date +'%Y-%m-%d %I:%M:%S %p'k do sleep 1; done
     status_command while ~/.config/swaybar/run-modules.sh; do sleep 1; done
     colors {
         statusline #ffffff

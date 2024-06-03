@@ -4,18 +4,18 @@
 COLOR_MUTE="^fg(red)"
 
 function run() {
-
-    ismute=$(amixer get Master|grep %|awk '{ print $6 }'|sed 's/\[//g'|sed 's/\]//g'|uniq)
+    ismute=$(awk -F"[][]" '/dB/ { print $6 }' <(amixer sget Master) | cut -d '%' -f 1)
     if [ "$ismute" == "off" ]; then
         VBS="0"
         ICO="🔇"
     else
-        VBS=$(amixer get Master|grep %|awk '{ print $5 }'|sed 's/%//g'|sed 's/\[//g'|sed 's/\]//g')
-
-        if [ $VBS -lt 50 ]; then
+        VBS=$(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master) | cut -d '%' -f 1)
+        if [ $VBS -lt 70 ]; then
             ICO="🔉"
-        elif [ $VBS -lt 30 ]; then
+        elif [ $VBS -lt 40 ]; then
             ICO="🔈"
+        elif [ $VBS -lt 1 ]; then
+            ICO="🔇"
         else
             ICO="🔊"
         fi

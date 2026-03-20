@@ -1,0 +1,36 @@
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "FirgeNerdConsole"
+style = "Bold"
+
+[font.bold_italic]
+family = "FirgeNerdConsole"
+style = "Bold Italic"
+
+[font.italic]
+family = "FirgeNerdConsole"
+style = "Italic"
+
+[font.normal]
+family = "FirgeNerdConsole"
+
+[window]
+opacity = 0.95
+
+[window.padding]
+x = 5
+y = 5
+
+[general]
+import = ["~/.config/alacritty/alacritty-theme/themes/tokyo-night-storm.toml"]
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"

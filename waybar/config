@@ -1,0 +1,238 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+        "custom/ollama",
+        "group/gpu-stats",
+        "group/power",
+        "group/hardware"
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "clock",
+        "custom/pacman",
+        "disk",
+        "group/utilities",
+        "network",
+        "bluetooth",
+        "tray"
+    ],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+    
+    "sway/mode": {
+        "format": "󰣆 {}"
+    },
+    
+    "custom/ollama": {
+        "exec": "ollama list | grep -q 'qwen' && echo '   Mono Awake' || echo '   Mono Slumbering'",
+        "interval": 10,
+        "on-click": "alacritty -e sudo systemctl start ollama",
+        "on-click-right": "alacritty -e sudo systemctl stop ollama",
+        "on-click-middle": "alacritty -e watch -n 1 blade-status",
+        "tooltip": false
+    },
+
+    "custom/asusctl": {
+        "exec": "echo \"$(asusctl profile get| grep Active | cut -d ':' -f 2 | tr -d ' ') \"",
+        "interval": 15,
+        "on-click": "asusctl profile next",
+        "on-click-right": "supergfxctl -m",
+        "format": " 󰌢  {}"
+    },
+
+    "custom/pacman": {
+        "exec": "checkupdates | wc -l",
+        "interval": 3600,
+        "format": "󰮯 {}"
+    },
+
+    "clock": {
+        "format": "󰥔 {:%H:%M}",
+        "format-alt": "󰃭 {:%A, %B %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#c0caf5'><b>{}</b></span>",
+                "days":       "<span color='#c0caf5'>{}</span>",
+                "weeks":      "<span color='#7dcfff'><b>W{}</b></span>",
+                "weekdays":   "<span color='#e0af68'><b>{}</b></span>",
+                "today":      "<span color='#f7768e'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    "group/utilities": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/dnd",
+            "idle_inhibitor",
+            "backlight",
+            "pulseaudio",
+            "pulseaudio#mic"
+        ]
+    },
+
+    "custom/dnd": {
+        "format": " {icon}{text} ",
+        "return-type": "json",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂚",
+            "dnd-notification": "󰂛",
+            "dnd-none": "󰂛",
+            "inhibited-notification": "󰂚",
+            "inhibited-none": "󰂚",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰂛"
+        },
+        "exec": "/home/musashi/.config/waybar/scripts/dnd.sh",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "idle_inhibitor": {
+        "format": " {icon} ",
+        "format-icons": {
+            "activated": "󰈈",
+            "deactivated": "󰈉"
+        }
+    },
+
+    "backlight": {
+        "format": " 󰃠 {percent}% ",
+        "on-scroll-up": "brightnessctl -- s -1%",
+        "on-scroll-down": "brightnessctl -- s +1%"
+    },
+
+    "pulseaudio": {
+        "format": " {icon} {volume}% ",
+        "format-muted": " 󰝟 Muted",
+        "ignored-sinks": [],
+        "reverse-scrolling": true,
+        "reverse-mouse-scrolling": true,
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "pulseaudio#mic": {
+        "format": " {format_source} ",
+        "format-source": "󰍬 {volume}%",
+        "format-source-muted": "󰍭 Muted",
+        "on-click": "pavucontrol -t 4",
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
+    },
+
+    "bluetooth": {
+        "format": "󰂯 {status}",
+        "format-connected": "󰂯 {device_alias}",
+        "format-connected-battery": "󰂯 {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on",
+        "on-click-right": "blueman-manager"
+    },
+
+    "network": {
+        "interval": 2,
+        "format-wifi": "󰤨 {essid}",
+        "format-ethernet": "󰈀 Wired",
+        "format-alt": "󰇚 {bandwidthDownBits} 󰕒 {bandwidthUpBits}",
+        "format-disconnected": "⚠ Off",
+        "tooltip-format": "{ifname} via {gwaddr}"
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}% ({free} free)",
+        "path": "/"
+    },
+
+    "group/gpu-stats": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/amd",
+            "custom/nvidia"
+        ]
+    },
+
+    "custom/amd": {
+        "exec": "card=$(grep -l 0x1002 /sys/class/drm/card*/device/vendor 2>/dev/null | head -n1 | cut -d/ -f5); temp=$(( $(cat /sys/class/thermal/thermal_zone0/temp 2>/dev/null) / 1000 )); util=$(cat /sys/class/drm/$card/device/gpu_busy_percent 2>/dev/null); used=$(cat /sys/class/drm/$card/device/mem_info_vram_used 2>/dev/null); total=$(cat /sys/class/drm/$card/device/mem_info_vram_total 2>/dev/null); echo \"󰻠 ${temp}°C ${util}% $(awk \"BEGIN {printf \\\"%.1f/%.1fGB\\\", $used/1073741824, $total/1073741824}\")\"",
+        "interval": 5,
+        "format": " {} ",
+        "tooltip-format": "Muramasa (AMD 890M iGPU) AI Stats"
+    },
+
+    "custom/nvidia": {
+        "exec": "nvidia-smi --query-gpu=temperature.gpu,utilization.gpu,memory.used,memory.total --format=csv,noheader,nounits | awk -F', ' '{printf \"󰓥 %d°C %d%% %.1f/%.1fGB\", $1, $2, $3/1024, $4/1024}'",
+        "format": " {} ",
+        "interval": 5,
+        "tooltip-format": "Muramasa (NVIDIA RTX 5080) AI Stats"
+    },
+
+    "group/power": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/asusctl",
+            "battery"
+        ]
+    },
+
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+            "temperature"
+        ]
+    },
+
+    "cpu": {
+        "format": " 󰻠 {usage}% ",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "  {}% "
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": " 󰏈 {temperatureC}°C "
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": " {icon} {capacity}% ",
+        "format-charging": " 󰂄 {capacity}% ",
+        "format-plugged": " 󰚥 {capacity}% ",
+        "format-icons": ["󰂎", "󰁺", "󰁽", "󰂀", "󰁹"]
+    },
+    
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    }
+}

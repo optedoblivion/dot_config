@@ -1,0 +1,121 @@
+/* Tokyonight Storm Colors */
+@define-color bg #1a1b26;
+@define-color bg-alt #24283b;
+@define-color fg #c0caf5;
+@define-color cyan #7dcfff;
+@define-color purple #bb9af7;
+@define-color magenta #bb9af7;
+@define-color red #f7768e;
+@define-color yellow #e0af68;
+@define-color green #9ece6a;
+@define-color black #15161e;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: rgba(26, 27, 38, 0.85); /* Semi-transparent Tokyonight */
+    color: @fg;
+    border-bottom: 2px solid @purple;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: @fg;
+}
+
+#workspaces button.focused {
+    color: @cyan;
+    border-bottom: 2px solid @cyan;
+}
+
+/* Base Module Spacing (Standalone Pills) */
+#clock,
+#network,
+#bluetooth,
+#disk,
+#tray,
+#custom-ollama,
+#custom-pacman {
+    padding: 0 10px;
+    margin: 4px 4px;
+    background-color: @bg-alt;
+    border-radius: 15px;
+}
+
+/* Pill Grouping Styles - Using both common ID patterns for Waybar Groups */
+#hardware, #group-hardware,
+#power, #group-power,
+#gpu-stats, #group-gpu-stats,
+#utilities, #group-utilities {
+    background-color: @bg-alt;
+    border-radius: 15px;
+    margin: 4px 4px;
+    padding: 0 4px;
+}
+
+/* Internal spacing for modules inside groups */
+#hardware > *, #group-hardware > *,
+#power > *, #group-power > *,
+#gpu-stats > *, #group-gpu-stats > *,
+#utilities > *, #group-utilities > * {
+    padding: 0 8px;
+    margin: 0;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+/* Subtle separators between group items */
+#hardware > *:not(:last-child), #group-hardware > *:not(:last-child),
+#power > *:not(:last-child), #group-power > *:not(:last-child),
+#gpu-stats > *:not(:last-child), #group-gpu-stats > *:not(:last-child),
+#utilities > *:not(:last-child), #group-utilities > *:not(:last-child) {
+    border-right: 1px solid rgba(192, 202, 245, 0.1);
+}
+
+/* Specific Module Highlighting */
+
+#custom-ollama {
+    color: @magenta;
+    font-weight: bold;
+}
+
+#custom-asusctl { color: @green; }
+#custom-pacman { color: @yellow; }
+#network { color: @cyan; }
+#disk { color: @purple; }
+
+/* Group Colors - GPU Pill */
+#gpu-stats #custom-amd, #group-gpu-stats #custom-amd { color: @cyan; }
+#gpu-stats #custom-nvidia, #group-gpu-stats #custom-nvidia { color: @yellow; }
+
+/* Group Colors - Hardware Pill */
+#hardware #cpu, #group-hardware #cpu { color: @cyan; }
+#hardware #memory, #group-hardware #memory { color: @purple; }
+#hardware #temperature, #group-hardware #temperature { color: @yellow; }
+#hardware #battery, #group-hardware #battery { color: @green; }
+
+#hardware #battery.critical, #group-hardware #battery.critical {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Utilities Group Colors */
+#utilities #custom-dnd, #group-utilities #custom-dnd { color: @red; }
+#utilities #idle_inhibitor, #group-utilities #idle_inhibitor { color: @cyan; }
+#utilities #backlight, #group-utilities #backlight { color: @yellow; }
+#utilities #pulseaudio, #group-utilities #pulseaudio { color: @purple; }
+#utilities #pulseaudio.mic, #group-utilities #pulseaudio.mic { color: @magenta; }
+#bluetooth { color: @cyan; }
+
+@keyframes blink {
+    to { background-color: @red; color: @black; }
+}

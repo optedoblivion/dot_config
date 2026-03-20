@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Pre-commit hook to ensure Waybar configuration is always valid
+
+echo "Running Waybar configuration tests before commit..."
+
+# Get the absolute path to the repository root
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+# Run the test suite
+if ! "${REPO_ROOT}/tests/run_tests.sh"; then
+    echo ""
+    echo "❌ COMMIT REJECTED: Waybar configuration tests failed."
+    echo "Please fix the errors above before committing."
+    exit 1
+fi
+
+echo "✅ All tests passed. Proceeding with commit."
+exit 0

@@ -42,7 +42,7 @@ output eDP-1 {
 }
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg "${HOME}"/.wallpaper.png fill
+output * bg "${HOME}"/.config/wallpapers/tokyo-main.png fill
 
 # TODO: use wpaperd
 #gaps outer 3

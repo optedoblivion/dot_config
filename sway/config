@@ -146,8 +146,8 @@ bindsym XF86AudioPrev exec playerctl previous
 
 ## Display
 bindsym XF86Display exec ~/.config/sway/scripts/sway-dock.sh
-bindsym XF86MonBrightnessUp exec brightnessctl set 3%+
-bindsym XF86MonBrightnessDown exec brightnessctl set 3%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 1%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 1%-
 bindsym $mod+Shift+r exec ~/.config/sway/scripts/sway-record-screen-gif.sh
 
 ## Radios
@@ -268,7 +268,7 @@ bindsym $mod+Shift+0 move container to workspace number 10
 bindsym $mod+tab workspace next_on_output
 bindsym $mod+Shift+tab workspace prev_on_output
 
-bindsym alt+tab exec ~/.config/sway/scripts/window-switcher.sh
+#bindsym alt+tab exec ~/.config/sway/scripts/window-switcher.sh
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 

@@ -1,0 +1,93 @@
+{
+  "check-book-splitter-state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAAC//////////8A/////wEAAAABAA=="
+  },
+  "find-widget-state": {
+    "case_sensitive": false,
+    "direction": "down",
+    "dot_all": false,
+    "mode": "normal",
+    "where": "current",
+    "wrap": true
+  },
+  "geometry-of-main_window_geometry": {
+    "frame_geometry": {
+      "height": 1160,
+      "width": 634,
+      "x": 0,
+      "y": 0
+    },
+    "full_screened": false,
+    "geometry": {
+      "height": 1160,
+      "width": 634,
+      "x": 0,
+      "y": 0
+    },
+    "maximized": false,
+    "normal_geometry": {
+      "height": 1160,
+      "width": 634,
+      "x": 0,
+      "y": 0
+    },
+    "qt": {
+      "__class__": "bytearray",
+      "__value__": "AdnQywADAAAAAAAAAAAAAAAAAnkAAASHAAAAAAAAAAAAAAJ5AAAEhwAAAAAAAAAAB4AAAAAAAAAAAAAAAnkAAASH"
+    },
+    "screen": {
+      "depth": 32,
+      "device_pixel_ratio": 2.0,
+      "geometry_in_logical_pixels": {
+        "height": 1200,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      },
+      "index_in_screens_list": 0,
+      "manufacturer": "Samsung Display Corp.",
+      "model": "ATNA40CU05-0 ",
+      "name": "eDP-1",
+      "serial": "",
+      "size_in_logical_pixels": {
+        "height": 1200,
+        "width": 1920
+      },
+      "virtual_geometry": {
+        "height": 1200,
+        "width": 1920,
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "html-editor-state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAD9AAAAAAAAAL4AAAPwAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAMAAAAUAGEAYwB0AGkAbwBuAF8AYgBhAHIBAAAAAP////8AAAAAAAAAAAAAABIAdABvAG8AbABzAF8AYgBhAHIBAAAAQv////8AAAAAAAAAAAAAAB4AaAB0AG0AbABfAGYAbwByAG0AYQB0AF8AYgBhAHIBAAAAgP////8AAAAAAAAAAA=="
+  },
+  "image-editor-state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAD9AAAAAAAAAL4AAAPwAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAMAAAAUAGEAYwB0AGkAbwBuAF8AYgBhAHIBAAAAAP////8AAAAAAAAAAAAAACAAZQBkAGkAdAAtAGEAYwB0AGkAbwBuAHMALQBiAGEAcgEAAABC/////wAAAAAAAAAAAAAAHABpAG0AYQBnAGUAXwBpAG4AZgBvAF8AYgBhAHIBAAAAgP////8AAAAAAAAAAA=="
+  },
+  "main_window_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAD9AAAABAAAAAAAAACjAAAEM/wCAAAABfsAAAAkAGYAaQBsAGUAcwAtAGIAcgBvAHcAcwBlAHIALQBkAG8AYwBrAQAAAD4AAAQzAAAAWgD////7AAAAHgB0AG8AYwAtAHYAaQBlAHcAZQByAC0AZABvAGMAawAAAAAA/////wAAAFoA////+wAAACAAdABlAHgAdAAtAHMAZQBhAHIAYwBoAC0AZABvAGMAawAAAAAA/////wAAAH0A////+wAAACAAYwBoAGUAYwBrAHAAbwBpAG4AdABzAC0AZABvAGMAawAAAAAA/////wAAAIwA////+wAAACYAcwBhAHYAZQBkAC0AcwBlAGEAcgBjAGgAZQBzAC0AZABvAGMAawAAAAAA/////wAAAhUA////AAAAAQAAAQ0AAAQz/AIAAAAC+wAAABgAcAByAGUAdgBpAGUAdwAtAGQAbwBjAGsBAAAAPgAABDMAAABTAP////sAAAAaAGwAaQB2AGUALQBjAHMAcwAtAGQAbwBjAGsAAAAAAP////8AAABaAP///wAAAAIAAAAAAAAAAPwBAAAAAfsAAAAeAGMAaABlAGMAawAtAGIAbwBvAGsALQBkAG8AYwBrAAAAAAD/////AAAAkAD///8AAAADAAAAAAAAAAD8AQAAAAH7AAAAHABpAG4AcwBwAGUAYwB0AG8AcgAtAGQAbwBjAGsAAAAAAP////8AAAA1AP///wAAAL4AAAQzAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAMAAAAUAGcAbABvAGIAYQBsAC0AYgBhAHIBAAAAAP////8AAAAAAAAAAAAAABIAdABvAG8AbABzAC0AYgBhAHIBAAABJv////8AAAAAAAAAAAAAABYAcABsAHUAZwBpAG4AcwAtAGIAYQByAAAAAAD/////AAAAAAAAAAA="
+  },
+  "recent-books": [
+    "/home/musashi/Downloads/a785c401f54b2b4d9ce383391561e2fafd9d02.epub"
+  ],
+  "reports-ui-state": {},
+  "saved_seaches_state": {
+    "direction": "down",
+    "where": "current",
+    "wrap": true
+  },
+  "search-panel-visible": false,
+  "text_search_widget_state": {
+    "case_sensitive": false,
+    "dot_all": true,
+    "mode": "normal",
+    "where": "current"
+  }
+}

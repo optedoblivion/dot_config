@@ -1,21 +1,18 @@
 {
-    "$schema": "https://opencode.ai/config.json",
-    "provider": {
-        "ollama": {
-            "npm": "ollama-ai-provider-v2",
-            "name": "Ollama (local)",
-            "options": {
-                "baseURL": "http://127.0.0.1:11434/api",
-                "compatibility": "compatible"
-            },
-            "models": {
-                "qwen2.5-coder-fixed": {
-                    "name": "Qwen 2.5 Coder 7B Q5KM",
-                    "tool_call": false
-                }
-            }
+    "profiles": {
+        "local-qwen": {
+            "model": "qwen3-coder",
+            "api_base": "http://localhost:8000/v1",
+            "api_key": "local-no-key-required",
+            "max_tokens": 4096,
+            "temperature": 1.0,
+            "context_window": 32768,
+            "supports_vision": false,
+            "supports_tools": true,
+            "tool_parser": "qwen3_coder"
         }
     },
-    "model": "ollama/qwen2.5-coder-fixed",
-    "permission": "allow"
+    "default_profile": "local-qwen",
+    "editor": "nvim",
+    "auto_execute_commands": false
 }
